@@ -1,0 +1,14 @@
+Expense Management restful service design
+---------------------------------------------
+
+Retrieve all claims for a user
+GET /users/{user_name}/claims
+
+Delete a claim for a user
+DELETE /users/{user_name}/claims/{claim_id}
+
+Edit a claim for a user
+PUT /users/{user_name}/claims/{claim_id}
+
+create a new claim
+POST /users/{user_name}/claims/
