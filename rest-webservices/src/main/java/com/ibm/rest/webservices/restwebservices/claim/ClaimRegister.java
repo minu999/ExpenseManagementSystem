@@ -2,14 +2,18 @@ package com.ibm.rest.webservices.restwebservices.claim;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class ClaimRegister {
 
+//	@Id
+//	@Column(name = "claimId", nullable = false)
 	@Id
-	@Column(name = "claimId", nullable = false)
-	private String claimId;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private long claimId;
 	
 	private String claimName;
 	private String projectId;
@@ -26,7 +30,7 @@ public class ClaimRegister {
 		super();
 	}
 
-	public ClaimRegister(String claimId, String claimName, String projectId, String approverEmailId,
+	public ClaimRegister(long claimId, String claimName, String projectId, String approverEmailId,
 			String emailId, String travelStartDateTime, String travelEndDateTime, boolean isValidated,
 			boolean isApproved, String claimStatus) {
 		super();
@@ -42,11 +46,11 @@ public class ClaimRegister {
 		this.claimStatus = claimStatus;
 	}
 
-	public String getClaimId() {
+	public long getClaimId() {
 		return claimId;
 	}
 
-	public void setClaimId(String claimId) {
+	public void setClaimId(long claimId) {
 		this.claimId = claimId;
 	}
 

@@ -18,4 +18,5 @@ import com.ibm.rest.webservices.restwebservices.register.User;
 public interface ClaimRegisterJpaRepository extends JpaRepository<ClaimRegister, String>{
 
 	List<ClaimRegister> findByEmailId(String emailId) ;
+	ClaimRegister findClaimIdByEmailId(String emailId);
 }

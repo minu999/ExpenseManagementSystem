@@ -5,6 +5,8 @@ package com.ibm.rest.webservices.restwebservices.claim;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
@@ -14,10 +16,10 @@ import javax.persistence.Id;
 @Entity
 public class ExpenseDetails {
 
+
+	private long claimId;
 	@Id
-	@Column(name = "claimId", nullable = false)
-	private String claimId;
-	
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private String expenseId;
 	private String expenseDetail;
 	private String description;
@@ -32,7 +34,7 @@ public class ExpenseDetails {
 	}
 
 
-	public ExpenseDetails(String claimId, String expenseId, String expenseDetail, String description,
+	public ExpenseDetails(long claimId, String expenseId, String expenseDetail, String description,
 			String typeOfExpense, String paymentMode, String expenseDateTime, String invoiceFilePath) {
 		super();
 		this.claimId = claimId;
@@ -46,12 +48,12 @@ public class ExpenseDetails {
 	}
 
 
-	public String getClaimId() {
+	public long getClaimId() {
 		return claimId;
 	}
 
 
-	public void setClaimId(String claimId) {
+	public void setClaimId(long claimId) {
 		this.claimId = claimId;
 	}
 
